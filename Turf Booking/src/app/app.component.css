@@ -1,0 +1,61 @@
+
+body{
+    background-image: url("https://cms.pixbit.in/uploads/BLOG_1677044255_a5245d56f0.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    }
+    .tit{
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid black;
+    text-align: center;
+    color:black;
+    background-size:cover;
+    background-image: url("https://t3.ftcdn.net/jpg/06/04/71/24/360_F_604712442_tFCiv8EsmTXgH98F82xtqo7hog58TltY.jpg");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+.tit{
+    position:absolute;
+    top: 10px;
+    left: 15%;
+    right: 15%;
+    height: 10%;
+}
+.details{
+    margin-top: 10px;
+     position: absolute;
+     top: 100px;
+     left: 5px;
+     right: 5px;
+     width: 50%;
+     height: 100%;
+     border: 3px solid black;
+     text-align: center;   
+     color:white; 
+     font-weight: bold;
+ 
+ }
+ .but{
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.data{
+    margin-top: 10px;
+    position: absolute;
+    top: 100px;
+    left: 52%;
+    width: 45%;
+    height: 100%;
+    border: 3px solid black;
+    
+    
+    /* background-image: url("https://as1.ftcdn.net/v2/jpg/08/51/54/56/1000_F_851545692_UoUSKRmOtI0uJT8b8RTbKligO5QnlID6.jpg" ); */
+}
+.th{
+    border: 2px solid black;
+}
+

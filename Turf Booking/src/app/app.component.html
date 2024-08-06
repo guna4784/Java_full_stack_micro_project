@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="tit">
+        <h1>Turf Management System</h1>
+    </div>
+    <div class="details">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <form #myForm="ngForm">
+                        <div class="form-group">
+                            <label for="teamId">Team Id</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   name="teamId" 
+                                   #teamId="ngModel" ngModel
+                                   required
+                                   pattern="[0-9]+">
+                            <div *ngIf="teamId.touched">
+                                <div *ngIf="teamId.errors?.['required']">
+                                    <font color="red">Team Id Required</font>
+                                </div>
+                                <div *ngIf="teamId.errors?.['pattern']">
+                                    <font color="red">Invalid Team Id</font>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="startTime">Start Time</label>
+                            <input type="time" 
+                                   class="form-control" 
+                                   name="startTime" 
+                                   #startTime="ngModel" ngModel
+                                   required>
+                            <div *ngIf="startTime.touched">
+                                <div *ngIf="startTime.errors?.['required']">
+                                    <font color="red">Start Time Required</font>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endTime">End Time</label>
+                            <input type="time" 
+                                   class="form-control" 
+                                   name="endTime" 
+                                   #endTime="ngModel" ngModel
+                                   required>
+                            <div *ngIf="endTime.touched ">
+                                <div *ngIf="endTime.errors?.['required']">
+                                    <font color="red">End Time Required</font>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   name="amount" 
+                                   #amount="ngModel" ngModel
+                                   required
+                                   pattern="[0-9]+">
+                            <div *ngIf="amount.touched">
+                                <div *ngIf="amount.errors?.['required']">
+                                    <font color="red">Amount Required</font>
+                                </div>
+                                <div *ngIf="amount.errors?.['pattern']">
+                                    <font color="red">Invalid Amount</font>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="but">
+                            <button type="button " class="btn btn-success" (click)="insertTurf(myForm.value)">Add</button>
+                            <button type="button" class="btn btn-primary" (click)="updateTurf(myForm.value)">Update</button>
+                            <button type="button" class="btn btn-danger" (click)="deleteTurf(myForm.value)">Delete</button>
+                            <button type="button" class="btn btn-warning" (click)="findTurf(myForm.value)">Find</button>
+                            <button type="button" class="btn btn-info" (click)="findAllTurf()">Find All</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data">
+        <br>
+        <h3>{{result}}</h3>
+        <div class="tabcol">
+        <div style="width: 100%;" *ngIf="flag">
+            <table width="80%" align="center" class="table table-bordered">
+                <tr>
+                    <th >Team Id</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Amount</th>
+                </tr>
+                <tr *ngFor="let turf of turfArr">
+                    <td>{{turf.id}}</td>
+                    <td>{{turf.startTime}}</td>
+                    <td>{{turf.endTime}}</td>
+                  <td>{{turf.amount}}</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
